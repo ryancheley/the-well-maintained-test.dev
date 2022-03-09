@@ -1,0 +1,20 @@
+{% include '_base.html' %}
+
+{% load socialaccount %}
+
+{% if user.is_authenticated %}
+
+<form action="/" method="get">
+    <label for="fname">Package:</label><br>
+    <input type="text" id="package" name="package"><br>
+    <input type="submit" value="Submit">
+    <br>
+    <a href="/">Clear</a>
+</form>
+
+<hr>
+
+{{ result | linebreaksbr }}
+
+{% endif %}
+
