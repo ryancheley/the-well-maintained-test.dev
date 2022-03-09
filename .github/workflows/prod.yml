@@ -17,27 +17,29 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
 
           script: |
-            rm -rf core
-            git clone git@github.com:ryancheley/core.git
+            rm -rf the-well-maintained-test.dev
+            git clone git@github.com:ryancheley/the-well-maintained-test.dev.git
 
-            source /home/core/venv/bin/activate
+            source /home/twmt/venv/bin/activate
 
-            cd /home/core/
+            cd /home/twmt/
 
-            rm -rf /home/core/core
+            rm -rf /home/twmt/core
 
-            cp -r /root/core/ /home/core/core
+            cp -r /root/the-well-maintained-test.dev/ /home/twmt/core
 
-            cp /home/core/.env /home/core/core/core/.env
+            cp /home/twmt/.env /home/twmt/core/core/.env
 
-            pip -q install -r /home/core/core/requirements.txt
+            pip -q install -r /home/twmt/core/requirements.txt
 
-            python /home/core/core/manage.py migrate
+            cd /home/twmt/core
 
-            mkdir /home/core/core/static
-            mkdir /home/core/core/staticfiles
+            python /home/twmt/core/manage.py migrate
 
-            python /home/core/core/manage.py collectstatic --noinput -v0
+            mkdir /home/twmt/core/static
+            mkdir /home/twmt/core/staticfiles
+
+            python /home/twmt/core/manage.py collectstatic --noinput -v0
 
             systemctl daemon-reload
             systemctl restart core

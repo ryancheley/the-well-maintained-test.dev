@@ -68,7 +68,7 @@ jobs:
 
         script: |
           rm -rf core
-          git clone --branch dev git@github.com:ryancheley/core.git
+          git clone --branch dev git@github.com:ryancheley/the-well-maintained-test.dev.git
 
           source /home/core/venv/bin/activate
 
