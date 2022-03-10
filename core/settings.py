@@ -256,6 +256,8 @@ csp_list = [
     "https://use.fontawesome.com",
     "https://cdn.tailwindcss.com/",
     "http://127.0.0.1:8000",
+    "https://the-well-maintained-test.dev/",
+    "https://www.the-well-maintained-test.dev/",
     "http://www.bohemiancoding.com",
     "http://www.w3.org",
     "'unsafe-eval'",
