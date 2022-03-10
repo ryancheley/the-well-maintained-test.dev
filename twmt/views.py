@@ -19,7 +19,10 @@ class HomePageTemplateView(TemplateView):
                 batcmd= f'the-well-maintained-test check -s {gh_token}'
             except IndexError:
                 batcmd= f'the-well-maintained-test check'
-        result = subprocess.check_output(batcmd, shell=True).decode("utf-8") 
+        try:
+            result = subprocess.check_output(batcmd, shell=True).decode("utf-8") 
+        except:
+            result = "Package needs to be updated"
         context['result'] = result
         return self.render_to_response(context)
         

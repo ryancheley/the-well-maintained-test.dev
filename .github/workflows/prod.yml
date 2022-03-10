@@ -34,12 +34,12 @@ jobs:
 
             cd /home/twmt/core
 
-            python /home/twmt/core/manage.py migrate
-
             mkdir /home/twmt/core/static
             mkdir /home/twmt/core/staticfiles
 
-            python /home/twmt/core/manage.py collectstatic --noinput -v0
+            python manage.py migrate
+
+            python manage.py collectstatic --noinput -v0
 
             systemctl daemon-reload
-            systemctl restart core
+            systemctl restart twmt
