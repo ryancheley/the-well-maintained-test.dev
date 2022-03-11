@@ -26,7 +26,6 @@ factory-boy
 django-extensions
 django-coverage-plugin
 pre-commit
-pygraphviz
 pydot
 coverage
 pytest

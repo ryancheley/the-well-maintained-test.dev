@@ -190,8 +190,6 @@ pyflakes==2.4.0
     # via flake8
 pygments==2.11.2
     # via rich
-pygraphviz==1.9
-    # via -r requirements.in
 pyjwt[crypto]==2.3.0
     # via django-allauth
 pyparsing==3.0.7
