@@ -5,7 +5,6 @@ env = environ.Env(
     ALLOWED_HOSTS=(list, []),
     DEBUG=(bool, False),
     SECRET_KEY=(str, "33p=mm5j9@ptu1mopm2gd-o4xjs#(n_75b_x(-5r0#6espl2&d"),
-    DATABASE_URL=(str, "psql://postgres:postgres@127.0.0.1:5432/github_actions"),
     SENDGRID_API_KEY=(str, ""),
     AWS_ACCESS_KEY_ID=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
@@ -118,9 +117,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db(),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR.parent / "db.sqlite",
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
