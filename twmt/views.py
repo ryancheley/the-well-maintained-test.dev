@@ -13,8 +13,8 @@ class HomePageTemplateView(TemplateView):
         if search:
             batcmd= f'the-well-maintained-test package {search}'
         else:
-            user_id = request.user.id
             try:
+                user_id = request.user.id
                 gh_token = SocialToken.objects.filter(account__user=user_id).values()[0].get('token')
                 batcmd= f'the-well-maintained-test check -s {gh_token}'
             except IndexError:
