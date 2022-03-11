@@ -26,7 +26,6 @@ factory-boy
 django-extensions
 django-coverage-plugin
 pre-commit
-pygraphviz
 pydot
 coverage
 pytest
@@ -40,3 +39,4 @@ tryceratops
 django-debug-toolbar
 pip-tools
 django-allauth
+the-well-maintained-test
